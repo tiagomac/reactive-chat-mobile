@@ -1,0 +1,192 @@
+<!DOCTYPE HTML><html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title>Telegram CAIXA</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+<!--  content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"-->
+<!--  
+<link rel="shortcut icon" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+-->
+<!-- <link rel="stylesheet" href="jqueryMobile/jquery.mobile-1.4.5.css"> -->
+        <link href="worklight/worklight.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <script>
+		// Define WL namespace.
+		var WL = WL ? WL : {};
+		/**
+		 * WLClient configuration variables.
+		 * Values are injected by the deployer that packs the gadget.
+		 */
+		 WL.StaticAppProps = {
+   "APP_DISPLAY_NAME": "Telegram CAIXA",
+   "APP_ID": "MobileTest",
+   "APP_SERVICES_URL": "\/apps\/services\/",
+   "APP_VERSION": "1.0",
+   "ENVIRONMENT": "android",
+   "LOGIN_DISPLAY_TYPE": "embedded",
+   "WORKLIGHT_NATIVE_VERSION": "1429089405",
+   "WORKLIGHT_PLATFORM_VERSION": "7.1.0.0",
+   "WORKLIGHT_ROOT_URL": "\/apps\/services\/api\/MobileTest\/android\/"
+};
+</script>
+		<script src="worklight/cordova.js"></script>
+		<script src="worklight/wljq.js"></script>
+		<script src="worklight/worklight.js"></script>
+		<script src="worklight/checksum.js"></script>
+		<script>
+	window.$ = window.jQuery = WLJQ;
+	if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+		var msViewportStyle = document.createElement("style");
+		msViewportStyle.appendChild(document
+				.createTextNode("@-ms-viewport{width:auto!important}"));
+		document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+	}
+	/*
+	document.addEventListener('deviceready', function() {
+		sayHello();
+	}, true);
+	*/
+</script>
+    </head>
+    <body style="display: none;">
+        <div data-role="page" id="page">
+            <div id="top_header">
+                <div class="bblue-twhite headerstyle navbar navbar-default navbar-static-top zeroborder">
+                    <div class="container-fluid">
+                        <div class="navbar-header pull-left">
+                            <a class="navbar-brand mtopreset">
+                                <h2 class="mtopreset text-warning">Telegram</h2> Caixa
+						</a>
+                        </div>
+                        <div class="navbar-header pull-right">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href="#"><i class="fa fa-fw fa-lg fa-search"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-fw fa-lg fa-navicon"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid maxwidth-bblue text-right">
+                    <ul class="bblue nav nav-pills navbar-right pull-right">
+				<!-- 
+					<li class="active"><a href="#" class="topop"
+						onclick="javascript:contact.openContact();"><i class="fa fa-fw fa-lg fa-wechat"></i>MENSAGENS</a></li>
+						 -->
+                        <li class="active">
+                            <a class="topop" href="#" onclick="javascript:contact.openContact();"><i class="fa fa-fw fa-lg fa-users"></i>CONTATOS</a>
+                        </li>
+                        <li class="active">
+                            <a class="topop" href="#" onclick="javascript:login.disconnect();"><i class="fa fa-fw fa-lg fa-plug"></i>SAIR</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="content" id="allContent" style="padding: 5px">
+			<!-- login start -->
+                <div class="section" draggable="true" id="loginScreen">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="text-center  text-warning">
+                                    <i class="-o fa fa-3x fa-fw fa-weixin text-primary"></i> 
+                                    <br>Telegram
+							</h1>
+                                <p class="text-center">
+                                    <img src="images/logocx.png">
+							</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-offset-3 col-md-6">
+                                <form role="form">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input class="form-control" id="loginTxt" placeholder="Informe seu nome" type="text"> <span class="input-group-btn"> <a class="btn btn-primary" id="btnEntrar" onclick="javascript:login.join();" type="submit">Entrar</a>
+										</span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			<!-- login end -->
+			<!-- contact start -->
+                <div id="contactScreen">
+				<!-- 
+				<div class="col-md-offset-3 col-md-6">
+					<form role="form">
+						<div class="form-group">
+							<div class="input-group">
+								<input type="text" class="form-control"
+									placeholder="Informe o nome do contato"> <span
+									class="input-group-btn"> <a class="btn btn-success"
+									type="submit"><i class="fa fa-fw fa-search"></i></a>
+								</span>
+							</div>
+						</div>
+					</form>
+				</div>
+				 -->
+                    <div class="section">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <ul class="media-list" id="contactList">
+									<!-- contacts goes here! -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			<!-- contacts end -->
+			<!-- chat begin -->
+                <div id="chatScreen">
+                    <div class="section">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <ul class="list-group">
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-offset-3 col-md-6">
+                                <form role="form">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <input class="form-control" id="msgInput" placeholder="Digite aqui..." type="text"> <span class="input-group-btn"> <a class="btn btn-primary" onclick="javascript:chat.sendMsg();" type="submit">Enviar
+												&nbsp;<i class="fa fa-fw fa-comment"></i>
+										</a>
+										</span>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			<!-- chat end -->
+            </div>
+        </div>
+	<!-- 
+	<script type="text/javascript" src="js/jquery2.0.3.min.js"></script>
+	<script src="jqueryMobile/jquery.mobile-1.4.5.js"></script>
+	 -->
+        <script src="js/main.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/socket.io-1.2.0.js"></script>
+	<script src="js/md5.js"></script>
+	<script src="js/initOptions.js"></script>
+	<script src="js/messages.js"></script>
+	<script src="js/strophe.min.js"></script>
+	<script src="js/app.js"></script>
+    </body>
+</html>

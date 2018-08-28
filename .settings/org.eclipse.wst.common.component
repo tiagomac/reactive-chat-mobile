@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="mobileTest">
+        <wb-resource deploy-path="/" source-path="/apps/MobileTest/common"/>
+        <wb-resource deploy-path="/" source-path="/apps/MobileTest/android"/>
+        <wb-resource deploy-path="/" source-path="/apps/MobileTest/desktopbrowser"/>
+        <wb-resource deploy-path="/" source-path="/apps/MobileTest/android.phone"/>
+        <wb-resource deploy-path="/" source-path="/apps/MobileTest/windowsphone8"/>
+        <wb-resource deploy-path="/" source-path="/apps/MobileTest/iphone"/>
+        <wb-resource deploy-path="/" source-path="/apps/MobileTest/iphone.skin"/>
+        <property name="context-root" value="mobileTest"/>
+    </wb-module>
+</project-modules>

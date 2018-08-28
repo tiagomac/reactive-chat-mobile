@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Licensed Materials - Property of IBM
+			 5725-I43 (C) Copyright IBM Corp. 2006, 2013. All Rights Reserved.
+			 US Government Users Restricted Rights - Use, duplication or
+             disclosure restricted by GSA ADP Schedule Contract with IBM Corp. --><!-- Attribute "id" must be identical to application folder name --><application xmlns="http://www.worklight.com/application-descriptor" id="MobileTest" platformVersion="7.1.0.00.20151012-1525">
+    <displayName>Telegram CAIXA</displayName>
+    <description>Telegram CAIXA</description>
+    <author>
+        <name>Capgemini</name>
+        <email>application author's e-mail</email>
+        <homepage>http://capgemini.com</homepage>
+        <copyright>Copyright My Company</copyright>
+    </author>
+    <mainFile>index.html</mainFile>
+    <features/>
+    <thumbnailImage>common/images/thumbnail.png</thumbnailImage>
+    <iphone bundleId="com.MobileTest" version="1.0">
+        <worklightSettings include="false"/>
+        <security>
+            <encryptWebResources enabled="false"/>
+            <testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3"/>
+        </security>
+    </iphone>
+    <android version="1.0">
+        <skins>
+            <skin name="default">
+                <folder name="common"/>
+                <folder name="android"/>
+            </skin>
+            <skin name="android.phone">
+                <folder name="common"/>
+                <folder name="android"/>
+                <folder name="android.phone"/>
+            </skin>
+        </skins>
+        <worklightSettings include="false"/>
+        <security>
+            <encryptWebResources enabled="false"/>
+            <testWebResourcesChecksum enabled="false" ignoreFileExtensions="png, jpg, jpeg, gif, mp4, mp3"/>
+            <publicSigningKey/>
+            <packageName/>
+        </security>
+    </android>
+    <windowsPhone8 version="1.0">
+        <uuid>1a09f995-9229-47c0-83e8-0b9bb6681b0a</uuid>
+    </windowsPhone8>
+    <desktopBrowser cacheManifest="no-use"/>
+</application>
